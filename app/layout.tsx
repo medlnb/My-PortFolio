@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: "Lanabi Mohamed",
   description: "Lanabi Mohamed portfolio",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
