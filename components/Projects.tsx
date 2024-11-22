@@ -12,7 +12,9 @@ interface ProjectType {
 }
 
 async function Projects({ limit }: { limit?: number }) {
-  const res = await fetch(`${process.env.Url}/api/project?limit=${limit}`);
+  const res = await fetch(
+    `${process.env.Url}/api/project${limit ? `?limit=${limit}` : ""}`
+  );
   if (!res.ok) return <p>Error Fetching Projects</p>;
   const ProjectsData: ProjectType[] = await res.json();
 
