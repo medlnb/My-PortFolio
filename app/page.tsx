@@ -8,6 +8,10 @@ import {
   FaJava,
   FaPython,
   FaReact,
+  FaFacebookF,
+  FaInstagram,
+  FaGithub,
+  FaLinkedin,
 } from "react-icons/fa";
 import { IoLogoCss3 } from "react-icons/io";
 import { TbFileTypeXml } from "react-icons/tb";
@@ -17,6 +21,7 @@ import SkillContainer from "@components/SkillContainer";
 import { Suspense } from "react";
 import Projects from "@components/Projects";
 import Link from "next/link";
+import Email from "@components/Email";
 
 interface skill {
   title: string;
@@ -120,6 +125,25 @@ const loader = (
   </div>
 );
 
+const socials = [
+  {
+    icon: <FaGithub />,
+    link: "https://github.com/medlnb",
+  },
+  {
+    icon: <FaLinkedin />,
+    link: "https://www.linkedin.com/in/mohamed-lanabi-5a977327b/",
+  },
+  {
+    icon: <FaFacebookF />,
+    link: "https://web.facebook.com/The.Winter.Ssoldier/",
+  },
+  {
+    icon: <FaInstagram />,
+    link: "https://www.instagram.com/thewintersoldier070/",
+  },
+];
+
 function Page() {
   return (
     <main>
@@ -190,6 +214,19 @@ function Page() {
             See More...
           </Link>
         </div>
+      </div>
+      <div className="my-10 flex justify-center items-center gap-6 flex-wrap">
+        {socials.map((social) => (
+          <Link
+            key={social.link}
+            href={social.link}
+            target="_blank"
+            className="text-2xl hover:scale-110 hover:px-2 duration-150"
+          >
+            {social.icon}
+          </Link>
+        ))}
+        <Email />
       </div>
     </main>
   );

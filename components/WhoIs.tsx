@@ -35,12 +35,12 @@ function WhoIs() {
           {"//write the code below to continue..."}
         </h3>
         <div className="flex flex-row items-center gap-2 overflow-hidden">
-          <h1 style={{ color: "#c9a6ee" }}>{">"}</h1>
+          <h1 className="text-[#c9a6ee]">{">"}</h1>
           <input
             spellCheck={false}
             onChange={handleChange}
             value={CodeValue}
-            className="code lg:text-xl text-sm"
+            className="bg-primary border-none text-[#c9a6ee] lg:text-xl text-sm placeholder:text-[#5c5265] focus:outline-none focus:text-[#c9a6ee]"
             placeholder="whois"
           />
         </div>

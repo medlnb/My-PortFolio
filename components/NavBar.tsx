@@ -11,14 +11,16 @@ function NavBar() {
   ];
 
   return (
-    <header className="fixed w-full top-0 left-0 flex justify-between md:text-base text-xs items-center bg-black border-t border-b border-black z-10 ">
+    <header className="fixed w-full top-0 left-0 flex justify-between md:text-base text-xs items-center bg-black z-10 ">
       <nav className="flex">
         {links.map((link) => (
           <Link
             key={link.link}
             href={link.link}
-            className={` md:text-white border-l border-r border-black py-3 md:px-20 px-2 relative ${
-              pathname === link.link ? "active" : ""
+            className={`py-3 md:px-20 px-2 relative ${
+              pathname === link.link
+                ? "active text-[#c09f5e] bg-primary"
+                : "text-white"
             }`}
           >
             {link.title}
